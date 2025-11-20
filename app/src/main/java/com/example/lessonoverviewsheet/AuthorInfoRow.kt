@@ -31,7 +31,8 @@ fun AuthorInfoRow(
             .fillMaxWidth()
             .padding(horizontal = 8.dp, vertical = 16.dp)
             .clip(RoundedCornerShape(16.dp))
-            .background(color = Color(0xffF9E2F3))
+            .background(color = Color(0xffF9E2F3)
+                .copy(alpha = 0.3f))
             .padding(horizontal = 8.dp, vertical = 16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

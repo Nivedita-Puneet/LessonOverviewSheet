@@ -2,11 +2,9 @@ package com.example.lessonoverviewsheet
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -32,14 +30,14 @@ fun KeyPointRow(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 8.dp, vertical = 4.dp)
+            .padding(horizontal = 8.dp, vertical = 4.dp),
+        horizontalArrangement = Arrangement.Start
     ) {
         Image(
             modifier = Modifier.size(20.dp),
             painter = painterResource(id = item.imageResId),
             contentDescription = null
         )
-
         Text(
             text = item.title,
             style = MaterialTheme.typography.bodyLarge,
@@ -61,6 +59,8 @@ fun KeyPointRowPreview() {
         )
 
         KeyPointRow(
-            item = item)
+            item = item,
+            modifier = Modifier.background(color = Color(0xffFFFFFF))
+        )
     }
 }
