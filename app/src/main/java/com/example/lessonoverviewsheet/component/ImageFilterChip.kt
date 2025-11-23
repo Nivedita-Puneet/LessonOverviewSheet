@@ -1,4 +1,4 @@
-package com.example.lessonoverviewsheet
+package com.example.lessonoverviewsheet.component
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,6 +21,7 @@ import androidx.compose.ui.tooling.preview.PreviewDynamicColors
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.example.lessonoverviewsheet.model.FilterOption
+import com.example.lessonoverviewsheet.model.data.filterOptions
 import com.example.lessonoverviewsheet.ui.theme.LessonOverviewSheetTheme
 
 /**
@@ -76,15 +76,7 @@ fun ImageFilterChip(
 fun ImageFilterChipPreview() {
     LessonOverviewSheetTheme {
         ImageFilterChip(
-            option = FilterOption(
-                id = "intermediate",
-                backgroundColor = Color(color = 0xffEFEFFC),
-                contentColor = Color(color = 0xff6B74F8),
-                borderColor = Color.Transparent,
-                title = "Intermediate",
-                tint = Color(color = 0xff6B74F8),
-                iconResId = R.drawable.icon,
-            )
+            option = filterOptions[0]
         )
     }
 }
@@ -96,15 +88,7 @@ fun ImageFilterChipPreview() {
 fun ImageFilterChipTimePreview() {
     LessonOverviewSheetTheme {
         ImageFilterChip(
-            option = FilterOption(
-                id = "time",
-                backgroundColor = Color(color = 0xffE5E5E9),
-                contentColor = Color(color = 0xff4C4F59),
-                borderColor = Color(color = 0xffE5E5E9),
-                title = "15 minutes",
-                tint = Color(color = 0xff6B74F8),
-                iconResId = R.drawable.clock,
-            )
+            option = filterOptions[3]
         )
     }
 }

@@ -23,9 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewDynamicColors
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.example.lessonoverviewsheet.component.AuthorInfoRow
+import com.example.lessonoverviewsheet.component.FilterChipGroup
+import com.example.lessonoverviewsheet.component.KeyPointRow
 import com.example.lessonoverviewsheet.model.FilterOption
 import com.example.lessonoverviewsheet.model.KeyPointItem
 import com.example.lessonoverviewsheet.model.Lesson
+import com.example.lessonoverviewsheet.model.data.overviewSheetDataSource
 import com.example.lessonoverviewsheet.ui.theme.LessonOverviewSheetTheme
 
 @Composable
@@ -152,37 +156,9 @@ fun LessonAdaptiveScreen(
 @PreviewDynamicColors
 @Composable
 private fun LessonAdaptiveScreenPreview() {
-    val lesson = Lesson(
-        title = "Physics Crash Course",
-        description = "The Physics Crash Course offers a foundational overview of essential concepts, teaching learners to understand Newton’s three laws of motion, explain the principle of energy conservation, distinguish between kinetic and potential energy with real-world examples, solve basic problems involving force and mass, and apply the concept of momentum in everyday situations.",
-        keyPoints = listOf(
-            KeyPointItem(
-                title = "Understand Newton's three laws of motion",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Explain the principle of energy conservation",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Identify real-world examples of kinetic and potential energy",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Solve simple Physics problems involving Force and mass",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Apply concepts of momentum in everyday scenarios",
-                imageResId = R.drawable.bullet_point
-            )
-        )
-    )
-
     LessonOverviewSheetTheme {
-
         LessonAdaptiveScreen(
-            lesson = lesson,
+            lesson = overviewSheetDataSource,
             isWideScreen = false
         )
     }
@@ -193,36 +169,9 @@ private fun LessonAdaptiveScreenPreview() {
 @PreviewDynamicColors
 @Composable
 private fun LessonAdaptiveTabletScreenPreview() {
-    val lesson = Lesson(
-        title = "Physics Crash Course",
-        description = "The Physics Crash Course offers a foundational overview of essential concepts, teaching learners to understand Newton’s three laws of motion, explain the principle of energy conservation, distinguish between kinetic and potential energy with real-world examples, solve basic problems involving force and mass, and apply the concept of momentum in everyday situations.",
-        keyPoints = listOf(
-            KeyPointItem(
-                title = "Understand Newton's three laws of motion",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Explain the principle of energy conservation",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Identify real-world examples of kinetic and potential energy",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Solve simple Physics problems involving Force and mass",
-                imageResId = R.drawable.bullet_point
-            ),
-            KeyPointItem(
-                title = "Apply concepts of momentum in everyday scenarios",
-                imageResId = R.drawable.bullet_point
-            )
-        )
-    )
-
     LessonOverviewSheetTheme {
         LessonAdaptiveScreen(
-            lesson = lesson,
+            lesson = overviewSheetDataSource,
             isWideScreen = true
         )
     }
